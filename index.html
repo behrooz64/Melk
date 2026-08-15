@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1">
+<meta name="theme-color" content="#0F1F2E">
+<meta name="description" content="محاسبه‌گر نسبت اجاره به قیمت ملک">
+<title>نسبت‌سنج اجاره</title>
+
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+  <header class="app-header">
+    <div class="brand">
+      <span class="brand-mark">٪</span>
+      <div class="brand-text">
+        <h1>نسبت‌سنج اجاره</h1>
+        <p>اجاره معادل نسبت به قیمت ملک</p>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="card inputs-card">
+      <div class="field">
+        <label for="price">قیمت ملک <span class="unit">تومان</span></label>
+        <input inputmode="numeric" id="price" class="num-input" placeholder="۱۰,۰۰۰,۰۰۰,۰۰۰" autocomplete="off">
+      </div>
+
+      <div class="field">
+        <label for="deposit">مبلغ رهن <span class="unit">تومان</span></label>
+        <input inputmode="numeric" id="deposit" class="num-input" placeholder="۲,۰۰۰,۰۰۰,۰۰۰" autocomplete="off">
+      </div>
+
+      <div class="field">
+        <label for="rent">اجاره ماهانه <span class="unit">تومان</span></label>
+        <input inputmode="numeric" id="rent" class="num-input" placeholder="۵۰,۰۰۰,۰۰۰" autocomplete="off">
+      </div>
+
+      <div class="field field-rate">
+        <label for="rate">نرخ تبدیل رهن به اجاره</label>
+        <div class="rate-row">
+          <span class="rate-text">هر ۱ میلیارد رهن =</span>
+          <input inputmode="numeric" id="rate" class="num-input rate-input" value="۳۰,۰۰۰,۰۰۰">
+          <span class="rate-text">اجاره</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="card result-card" id="resultCard" hidden>
+      <h2 class="ledger-title">تفکیک محاسبه</h2>
+
+      <div class="ledger">
+        <div class="ledger-row">
+          <span class="ledger-label">اجاره معادل رهن</span>
+          <span class="ledger-value" id="outDepositRent">—</span>
+        </div>
+        <div class="ledger-row">
+          <span class="ledger-label">اجاره نقدی ماهانه</span>
+          <span class="ledger-value" id="outCashRent">—</span>
+        </div>
+        <div class="ledger-row ledger-row--sum">
+          <span class="ledger-label">اجاره معادل کل</span>
+          <span class="ledger-value" id="outTotalRent">—</span>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="headline-stats">
+        <div class="stat">
+          <span class="stat-value" id="outMonthlyRatio">—</span>
+          <span class="stat-label">نسبت ماهانه</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value" id="outAnnualYield">—</span>
+          <span class="stat-label">بازده ناخالص سالانه</span>
+        </div>
+      </div>
+
+      <p class="disclaimer">این عدد، بازده ناخالص است و هزینه‌های نگهداری، مالیات و خالی‌ماندن ملک در آن لحاظ نشده‌اند.</p>
+    </section>
+
+    <section class="card empty-state" id="emptyState">
+      <p>قیمت ملک و اجاره ماهانه را وارد کن تا نسبت محاسبه شود.</p>
+    </section>
+
+  </main>
+
+  <footer class="app-footer">
+    <span id="installHint" class="install-hint" hidden>برای نصب روی گوشی، از منوی مرورگر گزینه «افزودن به صفحه اصلی» را بزن.</span>
+  </footer>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
