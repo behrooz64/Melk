@@ -1,7 +1,7 @@
 {
-  "name": "نسبت‌سنج اجاره",
-  "short_name": "نسبت اجاره",
-  "description": "محاسبه نسبت اجاره معادل ماهانه به قیمت ملک",
+  "name": "ارزندگی خرید ملک",
+  "short_name": "ارزندگی ملک",
+  "description": "بررسی منطقی بودن قیمت خرید ملک بر اساس اجاره",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
