@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>سالنامه</title>
+<style>body{font-family:tahoma;background:#f5f5f5;padding:20px;text-align:center}.box{background:white;border-radius:16px;padding:20px;max-width:400px;margin:auto}select{padding:10px;width:100%;font-size:18px}</style>
+</head>
+<body>
+<div class="box">
+<h1>سالنامه</h1>
+<p>انتخاب سال شمسی و حیوان سال</p>
+<select id="year"></select>
+<h2 id="animal"></h2>
+<p id="turk"></p>
+</div>
+<script>
+const animals=[['موش','سیچان'],['گاو','سیغیر'],['ببر','پلنگ'],['خرگوش','توشقان'],['اژدها','اژدرها'],['مار','ایلان'],['اسب','آت'],['گوسفند','قویین'],['میمون','مایمون'],['خروس','توقی'],['سگ','ایت'],['خوک','دونغوز']];
+const y=document.getElementById('year');
+for(let i=1400;i<=1450;i++){let o=document.createElement('option');o.value=i;o.text=i;y.appendChild(o)}
+function calc(){let base=1400;let a=animals[(y.value-base)%12];document.getElementById('animal').innerText='حیوان: '+a[0];document.getElementById('turk').innerText='نام ترکمنی: '+a[1]}
+y.onchange=calc;calc();
+</script>
+</body>
+</html>
